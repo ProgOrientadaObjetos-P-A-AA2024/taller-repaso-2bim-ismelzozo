@@ -12,10 +12,10 @@ public class TipoSuv extends Vehiculo{
     private double porcentajeSeguroPersonas;
     private double seguroPersonas;
 
-    public TipoSuv(double psp, double sp, Comprador p, String m, double pb, double pf) {
-        super(p, m, pb, pf);
+    public TipoSuv(Comprador p, String m, double pb, double psp) {
+        super(p, m, pb);
         porcentajeSeguroPersonas = psp;
-        seguroPersonas = sp;
+        calcularPrecioFinal();
     }
     
     @Override
@@ -42,7 +42,8 @@ public class TipoSuv extends Vehiculo{
 
     @Override
     public String toString() {
-        return String.format("TipoSuv\n"
+        return String.format("------------------------------\n"
+                + "TipoSuv\n"
                 + "--------------------------------------\n"
                 + "Porcentaje Adicional de seguro para personas: %f\n"
                 + "Seguro Personas: %.2f\n", obtenerPorcentajeSeguroPersonas(),

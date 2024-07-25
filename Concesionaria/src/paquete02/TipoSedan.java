@@ -13,11 +13,10 @@ public class TipoSedan extends Vehiculo{
     private double valorDescuento;
     private double seguroAdicionalMecanico;
 
-    public TipoSedan(double pd, double vd, double sam, Comprador p, String m, double pb, double pf) {
-        super(p, m, pb, pf);
+    public TipoSedan( Comprador p, String m, double pb, double pd) {
+        super(p, m, pb);
         porcentajeDescuento = pd;
-        valorDescuento = vd;
-        seguroAdicionalMecanico = sam;
+        calcularPrecioFinal();
     }
     
     @Override
@@ -52,7 +51,8 @@ public class TipoSedan extends Vehiculo{
 
     @Override
     public String toString() {
-        return String.format("TipoSedan\n"
+        return String.format("------------------------------\n"
+                + "TipoSedan\n"
                 + "--------------------------------------\n"
                 + "Porcentaje de descuento: %.2f\n"
                 + "Valor de descuento: %.2f\n"

@@ -13,11 +13,10 @@ public class TipoCamioneta extends Vehiculo{
     private double valorAdicionalImportacion;
     private double seguroAdicionalMantenimiento;
 
-    public TipoCamioneta(double pai, double vai, double sam, Comprador p, String m, double pb, double pf) {
-        super(p, m, pb, pf);
-        this.porcentajeAddicionalImportacion = pai;
-        this.valorAdicionalImportacion = vai;
-        this.seguroAdicionalMantenimiento = sam;
+    public TipoCamioneta( Comprador p, String m, double pb, double pai) {
+        super(p, m, pb);
+        porcentajeAddicionalImportacion = pai;
+        calcularPrecioFinal();
     }
     
     
@@ -55,7 +54,8 @@ public class TipoCamioneta extends Vehiculo{
 
     @Override
     public String toString() {
-        return String.format("TipoCamioneta\n"
+        return String.format("---------------------------\n"
+                + "TipoCamioneta\n"
                 + "---------------------------------------\n"
                 + "Porcentaje adicional fijo por importacion: %.2f\n"
                 + "Valor adicional fijo de importacion: %.2f\n"

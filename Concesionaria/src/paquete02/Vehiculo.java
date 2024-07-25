@@ -15,11 +15,10 @@ public abstract class Vehiculo {
     protected double precioBase;
     protected double precioFinal;
 
-    public Vehiculo(Comprador p, String m, double pb, double pf) {
+    public Vehiculo(Comprador p, String m, double pb) {
         propietario = p;
         marca = m;
         precioBase = pb;
-        precioFinal = pf;
     }
     
     public abstract void calcularPrecioFinal();
@@ -60,7 +59,7 @@ public abstract class Vehiculo {
     
     
     
-    @Override
+    /*@Override
     public String toString() {
         return String.format("VEHICULO\n"
                 + "---------------------------------\n"
@@ -70,6 +69,15 @@ public abstract class Vehiculo {
                 + "Precio Final: %.2f\n",
                 obtenerPropietario(),obtenerMarca(),obtenerPrecioBase(),
                 obtenerPrecioFinal());
+    }*/
+
+    @Override
+    public String toString() {
+        return "Vehiculo\n" + 
+                "Propietario=" + propietario +
+                "marca=" + marca + 
+                "precioBase=" + precioBase + 
+                "precioFinal=" + precioFinal;
     }
 
 }
